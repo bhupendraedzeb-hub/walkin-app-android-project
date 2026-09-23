@@ -32,6 +32,15 @@ jobs:
       - name: Accept Android SDK licenses
         run: yes | "$ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager" --licenses || true
 
+      - name: Verify JDK in use
+        run: |
+          echo "JAVA_HOME=$JAVA_HOME"
+          java -version
+          "$JAVA_HOME/bin/javac" -version
+
+      - name: Pin Gradle to JDK 21 explicitly
+        run: echo "org.gradle.java.home=$JAVA_HOME" >> android/gradle.properties
+
       - name: Make gradlew executable
         run: chmod +x android/gradlew
 

@@ -1,0 +1,16 @@
+{
+  "appId": "com.edzeb.walkin",
+  "appName": "edZeb Walk-In",
+  "webDir": "www",
+  "server": {
+    "url": "https://www.edzeb.com/walkin-form/pages/login.php",
+    "cleartext": false,
+    "allowNavigation": [
+      "www.edzeb.com",
+      "edzeb.com"
+    ]
+  },
+  "android": {
+    "allowMixedContent": false
+  }
+}
